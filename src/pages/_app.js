@@ -1,8 +1,8 @@
+import React from 'react'
 import '../css/fonts.css'
 import '../css/main.css'
 import 'focus-visible'
 import { useState, useEffect, Fragment } from 'react'
-import { Header } from '@/components/Header'
 import { Title } from '@/components/Title'
 import Router from 'next/router'
 import ProgressBar from '@badrap/bar-of-progress'
@@ -10,6 +10,12 @@ import Head from 'next/head'
 import twitterLargeCard from '@/img/twitter-large-card.jpg'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
+import { Header } from '@/components/Header'
+
+import { prefix } from 'goober-autoprefixer'
+import { setup } from 'goober'
+
+setup(React.createElement, prefix)
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver

@@ -65,6 +65,7 @@
     "@agney/babel-plugin-goober-css-prop": "^0.0.1",
     "@molehill-ui/babel-plugin": "^0.0.1-alpha.16",
     "@molehill-ui/postcss-plugin": "^0.0.1-alpha.18",
+    "@types/node": "^15.0.2",
     "@types/react": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",

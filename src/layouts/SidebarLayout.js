@@ -273,20 +273,18 @@ function TopLevelNav() {
 export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar, fallbackHref }) {
   return (
     <SidebarContext.Provider value={{ nav, navIsOpen, setNavIsOpen }}>
-      <div className="w-full max-w-8xl mx-auto">
-        <div className="lg:flex">
+      <div css={{ width: '100%', mx: 'auto' }}>
+        <div css={{ lg: { display: 'flex' } }}>
           <div
-            id="sidebar"
-            onClick={() => setNavIsOpen(false)}
+            css={{
+              bg: 'white',
+              display: 'fixed',
+            }}
             className={clsx(
-              'fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block',
-              {
-                hidden: !navIsOpen,
-              }
+              'fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block'
             )}
           >
             <div
-              id="navWrapper"
               onClick={(e) => e.stopPropagation()}
               className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
             >
@@ -297,13 +295,12 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
             </div>
           </div>
           <div
-            id="content-wrapper"
-            className={clsx(
-              'min-w-0 w-full flex-auto lg:static lg:max-h-full lg:overflow-visible',
-              {
-                'overflow-hidden max-h-screen fixed': navIsOpen,
-              }
-            )}
+            css={{
+              display: 'flex',
+              mt: 16,
+              minWidth: 0,
+              width: '100%',
+            }}
           >
             {children}
           </div>

@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from 'react'
+import { useEffect, useContext, useRef, ReactNode } from 'react'
 import { ContentsContext } from '@/layouts/ContentsLayout'
 import { useTop } from '@/hooks/useTop'
 import clsx from 'clsx'
@@ -15,7 +15,7 @@ export function Heading({
   style = {},
   ...props
 }) {
-  let Component = `h${level}`
+  let Component = `h${level}` as any
   const { registerHeading, unregisterHeading } = useContext(ContentsContext)
 
   let ref = useRef()

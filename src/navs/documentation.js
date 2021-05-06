@@ -6,5 +6,5 @@ const pages = createPageList(
 )
 
 export const documentationNav = {
-  'Getting started': [pages['installation']],
+  'Getting started': [pages['background'], pages['installation'], pages['themeing']],
 }

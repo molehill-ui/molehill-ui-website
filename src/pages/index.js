@@ -71,22 +71,13 @@ export default function Home() {
   return (
     <div className="space-y-20 sm:space-y-32 md:space-y-40 lg:space-y-44 overflow-hidden">
       <Head>
-        <meta
-          key="twitter:title"
-          name="twitter:title"
-          content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
-        />
-        <meta
-          key="og:title"
-          property="og:title"
-          content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
-        />
-        <title>Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.</title>
+        <meta key="twitter:title" name="twitter:title" content="MoleHill UI" />
+        <meta key="og:title" property="og:title" content="MoleHill UI" />
+        <title>MoleHill UI</title>
       </Head>
       <header className="relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto">
         <div className="px-4 sm:px-6 md:px-8 mb-14 sm:mb-20 xl:mb-8">
           <div className="border-b border-gray-200 py-4 flex items-center justify-between mb-16 sm:mb-20 -mx-4 px-4 sm:mx-0 sm:px-0">
-            <Search />
             <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-10">
               <NextLink href="/docs">
                 <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">

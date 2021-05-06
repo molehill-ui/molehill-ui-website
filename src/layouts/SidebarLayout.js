@@ -11,18 +11,28 @@ const NavItem = forwardRef(({ href, children, isActive, isPublished, fallbackHre
     <li ref={ref}>
       <Link href={isPublished ? href : fallbackHref}>
         <a
-          className={clsx('px-3 py-2 transition-colors duration-200 relative block', {
-            'text-cyan-700': isActive,
-            'hover:text-gray-900 text-gray-500': !isActive && isPublished,
-            'text-gray-400': !isActive && !isPublished,
-          })}
+          css={{
+            color: isActive ? 'blue-500' : 'gray-500',
+            display: 'block',
+            position: 'relative',
+            px: 3,
+            py: 2,
+            transition: 'colors 0.2s ease-in-out',
+          }}
         >
           <span
-            className={clsx('rounded-md absolute inset-0 bg-cyan-50', {
-              'opacity-0': !isActive,
-            })}
+            css={{
+              bg: 'blue-50',
+              borderRadius: 'md',
+              opacity: isActive ? 1 : 0,
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+            }}
           />
-          <span className="relative">{children}</span>
+          <span css={{ position: 'relative' }}>{children}</span>
         </a>
       </Link>
     </li>
@@ -72,15 +82,19 @@ function Nav({ nav, children, fallbackHref }) {
                 let publishedItems = nav[category]
                 if (publishedItems.length === 0 && !fallbackHref) return null
                 return (
-                  <li key={category} className="mt-8">
+                  <li key={category} css={{ mb: 8 }}>
                     <h5
-                      className={clsx(
-                        'px-3 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs',
-                        {
-                          'text-gray-900': publishedItems.length > 0,
-                          'text-gray-400': publishedItems.length === 0,
-                        }
-                      )}
+                      css={{
+                        color: 'gray-700',
+                        fontSize: 'sm',
+                        fontWeight: 'bold',
+                        px: 3,
+                        mb: 3,
+                        textTransform: 'uppercase',
+                        lg: {
+                          fontSize: 'xs',
+                        },
+                      }}
                     >
                       {category}
                     </h5>
@@ -117,16 +131,45 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
             css={{
               bg: 'white',
               display: 'fixed',
+              flex: 'none',
+              height: '100%',
+              position: 'fixed',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              lg: {
+                display: 'block',
+                position: 'static',
+                height: 'auto',
+                overflowY: 'visible',
+                pt: 0,
+                width: '15rem',
+              },
+              xl: {
+                width: '18rem',
+              },
             }}
-            className={clsx(
-              'fixed z-40 inset-0 flex-none h-full bg-black bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block'
-            )}
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:relative lg:sticky lg:bg-transparent overflow-hidden lg:top-18 bg-white mr-24 lg:mr-0"
+              css={{
+                bg: 'white',
+                height: '100%',
+                mr: 24,
+                overflowY: 'auto',
+                lg: {
+                  bg: 'transparent',
+                  display: 'block',
+                  height: 'auto',
+                  mr: 0,
+                  overflow: 'hidden',
+                  position: 'relative',
+                  top: '4.5rem',
+                },
+              }}
             >
-              <div className="hidden lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white" />
               <Nav nav={nav} fallbackHref={fallbackHref}>
                 {sidebar}
               </Nav>

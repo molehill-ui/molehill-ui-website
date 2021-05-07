@@ -1,5 +1,5 @@
-@import 'node_modules/modern-normalize/modern-normalize.css';
-@import 'molehill/theme';
+@import 'molehill-ui/variables';
+@import 'molehill-ui/base';
 
 @import 'prism.css';
 @import 'bar-of-progress.css';

@@ -59,8 +59,8 @@
   },
   "devDependencies": {
     "@agney/babel-plugin-goober-css-prop": "^0.0.1",
-    "@molehill-ui/babel-plugin": "^0.4.4",
-    "@molehill-ui/postcss-plugin": "^0.4.4",
+    "@molehill-ui/babel-plugin": "^0.4.5",
+    "@molehill-ui/postcss-plugin": "^0.4.5",
     "@types/node": "^15.0.2",
     "@types/react": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "2.x",

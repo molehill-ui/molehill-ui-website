@@ -38,10 +38,8 @@
         "./src/navs/*"
       ]
     },
-    "types": [
-      "@molehill-ui/babel-plugin/types/css-prop"
-    ]
   },
+  "files": ["src/molehill.d.ts"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

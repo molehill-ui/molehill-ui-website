@@ -2267,34 +2267,34 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.21.tgz#25f97a0a1b76e78c16ae5d98c6c73e1be8d89e39"
   integrity sha512-6sANhqfEHu6gdHZSrzDjN18Y48mIon8f2Os6J+IFmMHN0IhNG/0PUIIsI07kA1sZ9t6vgZNBloVmcDa5WOSe6A==
 
-"@molehill-ui/babel-plugin@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@molehill-ui/babel-plugin/-/babel-plugin-0.4.4.tgz#185e5d8748141e9b2ae1835ca033ab14b4245c58"
-  integrity sha512-+f2gCz2sUxcGWhd3PYkjEBehLQmzjVECX11FfwDDYkGRbzn8gMBDAPVs+q716z36oZ9Wa8RT+LE0QB0tgKts4w==
+"@molehill-ui/babel-plugin@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@molehill-ui/babel-plugin/-/babel-plugin-0.4.5.tgz#22ab46bd3aad773a06992f4196aacac655c67005"
+  integrity sha512-555nzR8/fr83Of5ABOHcEFT9nT/uI/NONXp9OEBXq9xBnFfSVRaSj9+pROf+Hbke3/b2uS0uD4kTNEsv3OQh/A==
   dependencies:
     "@babel/preset-env" "^7.12.16"
     "@babel/preset-react" "^7.12.13"
     "@babel/preset-typescript" "^7.12.16"
     "@babel/types" "^7.12.13"
-    "@molehill-ui/theme" "^1.4.4"
+    "@molehill-ui/theme" "^1.4.5"
     babel-plugin-macros "^3.0.1"
     cosmiconfig "^7.0.0"
     just-clone "^3.1.0"
 
-"@molehill-ui/postcss-plugin@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@molehill-ui/postcss-plugin/-/postcss-plugin-0.4.4.tgz#3f19879327a8961893e31523d89b4d20534d205d"
-  integrity sha512-tm+QRQWWiAKv+NNk1bHsFGLEp4YPlFEsHwVWEZgRgV4osJZ1jj5P/kXALLRGu7dpiqdFxMXBHbl2ERg0IwPAJA==
+"@molehill-ui/postcss-plugin@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@molehill-ui/postcss-plugin/-/postcss-plugin-0.4.5.tgz#5e7bc2c7a89601c1f9f217736edf7c582684ff26"
+  integrity sha512-3UNhn0cBeKFC2HtJn1Ac1bt/TCXyRNRcmBZcZtEqEHjPy6GCd1g1UwSGrhKoNnf4vRfZp2nS8fmXlJ9jKhDUZg==
   dependencies:
-    "@molehill-ui/theme" "^1.4.4"
+    "@molehill-ui/theme" "^1.4.5"
     cosmiconfig "^7.0.0"
     lodash "^4.17.21"
     modern-normalize "^1.1.0"
 
-"@molehill-ui/theme@^1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@molehill-ui/theme/-/theme-1.4.4.tgz#f9b8741aade87be62ba8b2aacb8d0b624824a879"
-  integrity sha512-7xShlxWtmiAn1xVBYeaa1YXolLWhLuG358vokUxYcFWlIQS1R3Gg+BtCfaPmJcgyQHIdzxhIQ2+21xa02uVUcA==
+"@molehill-ui/theme@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@molehill-ui/theme/-/theme-1.4.5.tgz#646ac3c8728636c94576387770f8a34230abd706"
+  integrity sha512-umWLGGB1TDgJteZ58SrXyEUh9xITw+qWMczdl1mH4ufCH42YF9QFYx/t8DvWExJLk7VQB8/cqTA8L3dAL1grtA==
   dependencies:
     just-clone "^3.1.0"
 

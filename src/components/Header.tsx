@@ -1,3 +1,4 @@
+/// <reference types="@molehill-ui/babel-plugin/types/css-prop" /
 import Link from 'next/link'
 
 export function Header() {

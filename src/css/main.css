@@ -74,3 +74,44 @@ pre code {
   font-family: inherit;
   line-height: inherit;
 }
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+thead {
+  color: #4b5563;
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: #e5e7eb;
+}
+
+th {
+  vertical-align: bottom;
+  padding: 0 0.5714286em 0.5714286em;
+  font-weight: 600;
+}
+
+th:first-child {
+  padding-left: 0;
+}
+
+td {
+  vertical-align: top;
+  padding: 0.5714286em;
+}
+
+td:first-child {
+  padding-left: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: #e5e7eb;
+}

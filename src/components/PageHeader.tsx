@@ -4,7 +4,7 @@ export function PageHeader({ title, description, border = true }) {
   return (
     <div
       css={{
-        borderBotom: '1px solid',
+        borderBottom: '1px solid',
         borderColor: border ? 'gray-200' : 'transparent',
         pb: 10,
       }}

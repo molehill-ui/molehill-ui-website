@@ -17,7 +17,7 @@ module.exports.withSyntaxHighlighting = () => {
       if (node.lang !== null) {
         node.type = 'html'
         node.value = [
-          `<div class="my-6 rounded-xl overflow-hidden ${colors[node.meta] || 'bg-gray-800'}">`,
+          `<div class="code-syntax">`,
           `<pre class="language-${node.lang} ${
             colors[node.meta] ? 'bg-black bg-opacity-75' : ''
           }">`,

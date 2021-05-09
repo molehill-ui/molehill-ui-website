@@ -1,7 +1,6 @@
-import { useEffect, useContext, useRef, ReactNode } from 'react'
+import { useEffect, useContext, useRef } from 'react'
 import { ContentsContext } from '@/layouts/ContentsLayout'
 import { useTop } from '@/hooks/useTop'
-import clsx from 'clsx'
 
 export function Heading({
   level,
@@ -41,7 +40,10 @@ export function Heading({
         // eslint-disable-next-line
         <a
           href={`#${id}`}
-          className="absolute after:hash opacity-0 group-hover:opacity-100"
+          css={{
+            position: 'absolute',
+            opacity: 0,
+          }}
           style={{ marginLeft: '-1em', paddingRight: '0.5em', boxShadow: 'none', color: '#a1a1aa' }}
           aria-label="Anchor"
         />

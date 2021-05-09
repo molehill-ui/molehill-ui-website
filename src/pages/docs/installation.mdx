@@ -12,10 +12,7 @@ yarn mh init
 ## Manual installation
 
 ```shell
-// yarn
 yarn add @molehill-ui/babel-plugin @molehill-ui/postcss-plugin -D
-
-// npm
 npm install @molehill-ui/babel-plugin @molehill-ui/postcss-plugin --save-dev
 ```
 
@@ -56,7 +53,8 @@ module.exports = theme
 
 ```css
 /* ./your-top-level-css-file.css */
-@import "molehill/theme"
+@import 'molehill-ui/variables';
+@import 'molehill-ui/base';
 ```
 ---
 

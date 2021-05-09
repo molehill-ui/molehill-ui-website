@@ -3,7 +3,7 @@
 .token.selector,
 .token.selector .class,
 .token.function {
-  @apply text-fuchsia-400;
+  color: purple-400;
 }
 
 .token.attr-name,
@@ -12,7 +12,7 @@
 .token.operator,
 .token.pseudo-class,
 .token.important {
-  @apply text-cyan-400;
+  color: pink-400;
 }
 
 .token.attr-value,
@@ -21,13 +21,13 @@
 .token.number,
 .token.unit,
 .token.color {
-  @apply text-lime-300;
+  color: green-300;
 }
 
 .token.punctuation,
 .token.module,
 .token.property {
-  @apply text-light-blue-200;
+  color: blue-200;
 }
 
 .token.atapply .token:not(.rule):not(.important) {
@@ -43,26 +43,41 @@
 }
 
 .token.comment {
-  @apply text-gray-400;
+  color: gray-400;
 }
 
 .token.deleted:not(.prefix) {
-  @apply relative block -mx-4 px-4;
+  display: block;
+  position: relative;
+  margin: 0 -1rem 0 1rem;
+  padding: 0 1rem 0 1rem;
 }
 
 .token.deleted:not(.prefix)::after {
+  background: rose-400;
   content: '';
-  @apply pointer-events-none absolute inset-0 block bg-rose-400 bg-opacity-25;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .token.deleted.prefix {
-  @apply text-gray-400 select-none;
+  color: gray-400;
+  user-select: none;
 }
 
 .token.inserted:not(.prefix) {
-  @apply block bg-emerald-700 bg-opacity-50 -mx-4 px-4;
+  background: emerald-700;
+  display: block;
+  margin: 0 -1rem 0 -1rem;
+  padding: 0 1rem 0 1rem;
 }
 
 .token.inserted.prefix {
-  @apply text-emerald-200 text-opacity-75 select-none;
+  color: emerald-200;
+  user-select: none;
 }

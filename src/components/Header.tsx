@@ -23,7 +23,7 @@ export function Header() {
       }}
     >
       <Link href="/">
-        <a css={{ color: 'black', fontWeight: 'bold' }}>MoleHill UI</a>
+        <a css={{ color: 'gray-900', fontWeight: 'extrabold' }}>MoleHill UI</a>
       </Link>
       <div
         css={{

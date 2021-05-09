@@ -1,18 +1,8 @@
-import {
-  useState,
-  useEffect,
-  createContext,
-  Fragment,
-  useCallback,
-  isValidElement,
-  useContext,
-} from 'react'
-import { ClassTable } from '@/components/ClassTable'
+import { useState, useEffect, createContext, Fragment, useCallback, useContext } from 'react'
 import { usePrevNext } from '@/hooks/usePrevNext'
 import Link from 'next/link'
 import { SidebarLayout, SidebarContext } from '@/layouts/SidebarLayout'
 import { PageHeader } from '@/components/PageHeader'
-import clsx from 'clsx'
 
 export const ContentsContext = createContext()
 
@@ -28,10 +18,28 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
   return (
     <>
-      <h5 className="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
+      <h5
+        css={{
+          color: 'gray-900',
+          fontSize: 'sm',
+          fontWeight: 'semibold',
+          letterSpacing: 'wide',
+          mb: 3,
+          textTransform: 'uppercase',
+          lg: {
+            fontSize: 'xs',
+          },
+        }}
+      >
         On this page
       </h5>
-      <ul className="overflow-x-hidden text-gray-500 font-medium">
+      <ul
+        css={{
+          color: 'gray-500',
+          fontWeigh: 'medium',
+          overflowX: 'hidden',
+        }}
+      >
         {tableOfContents.map((section) => {
           let sectionIsActive =
             currentSection === section.slug ||
@@ -43,12 +51,15 @@ function TableOfContents({ tableOfContents, currentSection }) {
                 <a
                   href={`#${section.slug}`}
                   onClick={closeNav}
-                  className={clsx(
-                    'block transform transition-colors duration-200 py-2 hover:text-gray-900',
-                    {
-                      'text-gray-900': sectionIsActive,
-                    }
-                  )}
+                  css={{
+                    color: sectionIsActive && 'gray-900',
+                    display: 'block',
+                    py: 2,
+                    transition: 'color 0.2s ease-in-out',
+                    '&:hover': {
+                      color: 'gray-900',
+                    },
+                  }}
                 >
                   {section.title}
                 </a>
@@ -58,21 +69,23 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
                 return (
                   <li
-                    className={clsx({
-                      'ml-4': isMainNav,
-                      'ml-2': !isMainNav,
-                    })}
                     key={subsection.slug}
+                    css={{
+                      ml: isMainNav ? 4 : 2,
+                    }}
                   >
                     <a
                       href={`#${subsection.slug}`}
                       onClick={closeNav}
-                      className={clsx(
-                        'block py-2 transition-colors duration-200 hover:text-gray-900 font-medium',
-                        {
-                          'text-gray-900': subsectionIsActive,
-                        }
-                      )}
+                      css={{
+                        color: subsectionIsActive && 'gray-900',
+                        display: 'block',
+                        py: 2,
+                        transition: 'color 0.2s ease-in-out',
+                        '&:hover': {
+                          color: 'gray-900',
+                        },
+                      }}
                     >
                       {subsection.title}
                     </a>
@@ -169,8 +182,31 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
   let { prev, next } = usePrevNext()
 
   return (
-    <div id={meta.containerId} className="w-full flex">
-      <div className="min-w-0 flex-auto px-4 sm:px-6 xl:px-8 pt-10 pb-24 lg:pb-16">
+    <div
+      id={meta.containerId}
+      css={{
+        display: 'flex',
+        width: '100%',
+      }}
+    >
+      <div
+        css={{
+          flex: 'auto',
+          minWidth: 0,
+          pb: 24,
+          pt: 10,
+          px: 4,
+          sm: {
+            px: 6,
+          },
+          lg: {
+            pb: 16,
+          },
+          xl: {
+            px: 8,
+          },
+        }}
+      >
         <PageHeader
           title={meta.title}
           description={meta.description}
@@ -178,21 +214,39 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           border={!classes && meta.headerSeparator !== false}
         />
         <ContentsContext.Provider value={{ registerHeading, unregisterHeading }}>
-          <div>
-            {classes && (
-              <ClassTable {...(isValidElement(classes) ? { custom: classes } : classes)} />
-            )}
-            {children}
-          </div>
+          <div>{children}</div>
         </ContentsContext.Provider>
         {(prev || next) && (
           <>
-            <hr className="border-gray-200 mt-10 mb-4" />
-            <div className="flex leading-6 font-medium">
+            <hr
+              css={{
+                border: '1px solid',
+                borderColor: 'gray-200',
+                mt: 10,
+                mb: 4,
+              }}
+            />
+            <div
+              css={{
+                display: 'flex',
+                lineHeight: 6,
+                fontWeight: 'medium',
+              }}
+            >
               {prev && (
                 <Link href={prev.href}>
-                  <a className="flex mr-8 transition-colors duration-200 hover:text-gray-900">
-                    <span aria-hidden="true" className="mr-2">
+                  <a
+                    css={{
+                      cursor: 'pointer',
+                      display: 'flex',
+                      mr: 8,
+                      transition: 'color 0.2s ease-in-out',
+                      '&:hover': {
+                        color: 'gray-900',
+                      },
+                    }}
+                  >
+                    <span aria-hidden="true" css={{ mr: 2 }}>
                       ←
                     </span>
                     {prev.shortTitle || prev.title}
@@ -201,9 +255,20 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
               )}
               {next && (
                 <Link href={next.href}>
-                  <a className="flex text-right ml-auto transition-colors duration-200 hover:text-gray-900">
+                  <a
+                    css={{
+                      cursor: 'pointer',
+                      display: 'flex',
+                      textAlign: 'right',
+                      ml: 'auto',
+                      transition: 'color 0.2s ease-in-out',
+                      '&:hover': {
+                        color: 'gray-900',
+                      },
+                    }}
+                  >
                     {next.shortTitle || next.title}
-                    <span aria-hidden="true" className="ml-2">
+                    <span aria-hidden="true" css={{ ml: 2 }}>
                       →
                     </span>
                   </a>
@@ -213,10 +278,30 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           </>
         )}
       </div>
-      <div className="hidden xl:text-sm xl:block flex-none w-64 pl-8 mr-8">
-        <div className="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-18">
+      <div
+        css={{
+          flex: 'none',
+          pl: 8,
+          mr: 8,
+          width: '16rem',
+          xl: {
+            display: 'block',
+            fontSize: 'sm',
+          },
+        }}
+      >
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            overflowY: 'auto',
+            position: 'fixed',
+            pt: 10,
+            pb: 6,
+          }}
+        >
           {toc.length > 0 && (
-            <div className="mb-8">
+            <div css={{ mb: 8 }}>
               <TableOfContents tableOfContents={toc} currentSection={currentSection} />
             </div>
           )}

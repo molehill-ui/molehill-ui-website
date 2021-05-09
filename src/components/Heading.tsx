@@ -32,7 +32,6 @@ export function Heading({
 
   return (
     <Component
-      className={clsx('group flex whitespace-pre-wrap', className)}
       id={id}
       ref={ref}
       style={{ ...(hidden ? { marginBottom: 0 } : {}), ...style }}

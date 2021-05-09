@@ -162,14 +162,15 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
                 height: '100%',
                 mr: 24,
                 overflowY: 'auto',
+                width: '288px',
                 lg: {
                   bg: 'transparent',
                   display: 'block',
                   height: 'auto',
                   mr: 0,
                   overflow: 'hidden',
-                  position: 'relative',
-                  top: '4.5rem',
+                  position: 'fixed',
+                  top: '3.75rem',
                 },
               }}
             >
@@ -181,7 +182,7 @@ export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar,
           <div
             css={{
               display: 'flex',
-              mt: 16,
+              mt: 14,
               minWidth: 0,
               width: '100%',
             }}

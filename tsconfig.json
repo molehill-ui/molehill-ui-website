@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es5",
+    "target": "es2019",
+    "module": "esnext",
     "lib": [
+      "es2019",
       "dom",
-      "dom.iterable",
-      "esnext"
+      "dom.iterable"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,25 +14,40 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@/components/*": ["./src/components/*"],
-      "@/layouts/*": ["./src/layouts/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/img/*": ["./src/img/*"],
-      "@/navs/*": ["./src/navs/*"]
-    }
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/img/*": [
+        "./src/img/*"
+      ],
+      "@/navs/*": [
+        "./src/navs/*"
+      ]
+    },
+    "types": [
+      "@molehill-ui/babel-plugin/types/css-prop"
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/layouts/SidebarLayout.ts"  ],
+    "**/*.tsx",
+    "src/layouts/SidebarLayout.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,4 +1,3 @@
-/// <reference types="@molehill-ui/babel-plugin/types/css-prop" />
 import React from 'react'
 import '../css/main.css'
 import 'focus-visible'

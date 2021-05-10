@@ -39,7 +39,6 @@
       ]
     },
   },
-  "files": ["src/molehill.d.ts"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

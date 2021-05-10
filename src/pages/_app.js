@@ -13,8 +13,16 @@ import { Header } from '@/components/Header'
 
 import { prefix } from 'goober-autoprefixer'
 import { setup } from 'goober'
+import { shouldForwardProp } from 'goober/should-forward-prop'
 
-setup(React.createElement, prefix)
+setup(
+  React.createElement,
+  prefix,
+  undefined,
+  shouldForwardProp((prop) => {
+    return !prop.startsWith('_css')
+  })
+)
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver

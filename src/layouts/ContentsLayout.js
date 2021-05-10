@@ -185,13 +185,12 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
     <div
       id={meta.containerId}
       css={{
-        display: 'flex',
-        width: '100%',
+        display: 'grid',
+        gridTemplateColumns: '1fr 20rem',
       }}
     >
       <div
         css={{
-          flex: 'auto',
           minWidth: 0,
           pb: 24,
           pt: 10,
@@ -283,7 +282,6 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           flex: 'none',
           pl: 8,
           mr: 8,
-          width: '16rem',
           xl: {
             display: 'block',
             fontSize: 'sm',

@@ -70,10 +70,10 @@ function Nav({ nav, children, fallbackHref }) {
           fontWeight: 'medium',
           overflowY: 'auto',
           pb: 10,
+          pt: 10,
           px: 1,
-          pt: 6,
           sm: { px: 3 },
-          lg: { fontSize: 'sm', pb: 14, pt: 10 },
+          lg: { fontSize: 'sm', pb: 14 },
           xl: { px: 5 },
         }}
       >
@@ -128,68 +128,11 @@ function Nav({ nav, children, fallbackHref }) {
 export function SidebarLayout({ children, navIsOpen, setNavIsOpen, nav, sidebar, fallbackHref }) {
   return (
     <SidebarContext.Provider value={{ nav, navIsOpen, setNavIsOpen }}>
-      <div css={{ width: '100%', mx: 'auto' }}>
-        <div css={{ lg: { display: 'flex' } }}>
-          <div
-            css={{
-              bg: 'white',
-              display: 'fixed',
-              flex: 'none',
-              height: '100%',
-              position: 'fixed',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              width: '100%',
-              lg: {
-                display: 'block',
-                position: 'static',
-                height: 'auto',
-                overflowY: 'visible',
-                pt: 0,
-                width: '15rem',
-              },
-              xl: {
-                width: '18rem',
-              },
-            }}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              css={{
-                bg: 'white',
-                height: '100%',
-                mr: 24,
-                overflowY: 'auto',
-                width: '288px',
-                lg: {
-                  bg: 'transparent',
-                  display: 'block',
-                  height: 'auto',
-                  mr: 0,
-                  overflow: 'hidden',
-                  position: 'fixed',
-                  top: '3.75rem',
-                },
-              }}
-            >
-              <Nav nav={nav} fallbackHref={fallbackHref}>
-                {sidebar}
-              </Nav>
-            </div>
-          </div>
-          <div
-            css={{
-              display: 'flex',
-              mt: 14,
-              minWidth: 0,
-              width: '100%',
-            }}
-          >
-            {children}
-          </div>
-        </div>
+      <div css={{ display: 'grid', gridTemplateColumns: '20rem 1fr', mt: 14 }}>
+        <Nav nav={nav} fallbackHref={fallbackHref}>
+          {sidebar}
+        </Nav>
+        {children}
       </div>
     </SidebarContext.Provider>
   )
